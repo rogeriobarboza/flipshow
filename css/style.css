@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#menu {
+    background-color: gray;
+    height: 7vh;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+
+    color: rgb(255, 255, 255);
+    padding: 1.5%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.back {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    
+    color: rgb(255, 255, 255);
+    padding: 1.5%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+#rodape {
+    background-color: gray;
+    height: 7vh;
+}
+
+/* A Div mainContainer assume o corpo da pagina e é necessário para alinhar as divs filhas, pois ela substitui o a tag Body. Opcionalmente pode escolher trabalhar com a tag body.*/
+.mainContainer {
+    height: 86vh;
+    width: 100%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-style: none ;
+    border-width: 1px;
+    border-color: rgb(36, 36, 36);
+}
+
+.flipContainer {
+    display:flex;
+    position:absolute;
+    translate: 0%; /* Editar posição horizontal para visualização em Smartphones*/
+
+    width: 75%; /* Define o tamanho da visualização. Usar  aproximadamente 75% para desktop. Usar aprox. 150% para visualizar 1 pagina por vez em smartphones*/
+    height: 75%;
+    margin-top: 5%;
+    margin-bottom: 5%; 
+
+    border-style: none;
+    border-width: 1px;
+    border-color: rgb(38, 0, 255);
+    background-color: gray;
+    
+}
+/* -- */
+
+.L {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+    border-style: none;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+}
+.R {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 100%;
+
+    perspective: 2200px;
+
+    border-style: none;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+}
+
+        .image-L {
+            display: flex;
+            position: absolute;
+            height: 100%;
+            
+            z-index: 1;
+            backface-visibility: hidden;
+
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(0, 0, 0);
+        }
+
+        .img-l {
+            width: 100%; height: 100%;
+            object-fit: contain; /* Mantem a proporção da imagem*/
+        }
+
+        .image-R {
+            transform: rotateY(180deg);
+            display: flex;
+            position: absolute;
+            height: 100%;
+            
+            z-index: 0;
+            backface-visibility: hidden;
+
+            border-style: none;
+            border-width: 1px;
+            border-color: rgb(201, 154, 0);
+        }
+
+        .img-r {
+            width: 100%; height: 100%;
+            object-fit: contain;                 
+        }
+        /* --- */
+
+.flip {
+    display: flex;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    
+    border-style: none;
+    border-width: 1px;
+    border-color: rgb(20, 117, 0);
+
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    transform-origin: 0;
+    transform: rotateY(0deg); 
+}
